@@ -50,7 +50,7 @@ describe('<Cell />', () => {
     const setState = sinon.spy(Cell.prototype, 'setState');
     const cellWhite = shallow(<Cell value="#000"/>)
     cellWhite.find('div').simulate('click')
-    expect(setState.calledOnce).to.equal(true);
+    expect(setState.notCalled).to.equal(true);
   })
 
   it("has an event listener that, when clicked, sets state's 'color' key to a value of '#333'", () => {
